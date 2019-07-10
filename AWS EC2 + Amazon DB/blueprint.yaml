@@ -13,7 +13,7 @@ resources:
   EC2-Web:
     type: Cloud.AWS.EC2.Instance
     properties:
-      image: ubuntu
+      image: Ubuntu-16
       flavor: medium
       cloudConfig: |
         #cloud-config
@@ -34,9 +34,9 @@ resources:
       storage_type: gp2
       engine: '${input.dbtype}'
       engine_version: '${input.dbtype == "postgres" ? "10.1" : "5.7"}'
-      account: AWS
+      account: AWS-new
       instance_class: db.t2.micro
-      provider_region: us-west-1
+      provider_region: us-east-1
       name: '${input.dbname}'
       username: foo
       password: foobarbaz
